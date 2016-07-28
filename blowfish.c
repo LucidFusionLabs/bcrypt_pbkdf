@@ -45,7 +45,6 @@
 #endif
 
 #include <sys/types.h>
-#include <blf.h>
 
 #undef inline
 #ifdef __GNUC__

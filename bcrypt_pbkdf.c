@@ -19,10 +19,6 @@
 
 #include <stdint.h>
 #include <stdlib.h>
-#include <blf.h>
-#include <sha2.h>
-#include <string.h>
-#include <util.h>
 
 #define	MINIMUM(a,b) (((a) < (b)) ? (a) : (b))
 
@@ -57,8 +53,10 @@ static void
 bcrypt_hash(uint8_t *sha2pass, uint8_t *sha2salt, uint8_t *out)
 {
 	blf_ctx state;
-	uint8_t ciphertext[BCRYPT_HASHSIZE] =
-	    "OxychromaticBlowfishSwatDynamite";
+	uint8_t ciphertext[BCRYPT_HASHSIZE] = {
+    'O', 'x', 'y', 'c', 'h', 'r', 'o', 'm', 'a', 't', 'i', 'c',
+    'B', 'l', 'o', 'w', 'f', 'i', 's', 'h', 'S', 'w', 'a', 't',
+    'D', 'y', 'n', 'a', 'm', 'i', 't', 'e' };
 	uint32_t cdata[BCRYPT_WORDS];
 	int i;
 	uint16_t j;
